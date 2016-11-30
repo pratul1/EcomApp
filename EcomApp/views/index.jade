@@ -1,19 +1,26 @@
 ﻿extends layout
 
 block content
-    h1= title
-    p Welcome, Enjoy Shoppping!!!!
+    //h1= title
+    //p Welcome, Enjoy Shoppping!!!!
 
     // Wrapper
     #wrapper
-        // TOP PRODUCT LIST
-        h2 Top Product List
-        #topproductList
-            table
-                thead
-                    th Title
-                    th Price
-                    th Availability
-                tbody
-        // /TOP PRODUCT LIST
+     //#logo
+     //   img(src='/images/ecomm.jpg')
+     // TOP PRODUCT LIST
+     h2 Top Product List
+     #topproductList
+         table
+             thead
+                 th Title
+                 th Price
+                 th Availability
+             tbody
+     // /TOP PRODUCT LIST
     // /WRAPPER
+    #footer
+        div Copyright© Ecomm #{+new Date().getFullYear()}  
+        a(href='/#') About 
+        | |  
+        a(href='/#') Contact Us

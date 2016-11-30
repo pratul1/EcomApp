@@ -1,10 +1,45 @@
 ﻿doctype html
 html
-    head
-        title= title
-        link(rel='stylesheet', href='/stylesheets/style.css')
+    head        
+          title= title
+          link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')      
+          link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.min.css')
+          link(rel='stylesheet', href='/stylesheets/style.css')
+          script(src='/javascripts/jquery-1.8.1.min.js') 
+          script(src='/javascripts/jquery-ui-1.9.1.custom.min.js')   
+          script(src='/javascripts/bootstrap.min.js')
+          link(rel='stylesheet', href='/stylesheets/jquery-ui-1.9.1.custom.css')
+          script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+          script(src='/javascripts/global.js')
     body
-        block content
-        script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
-        script(src='/javascripts/global.js')
-        script(src='/javascripts/global1.js')
+        div.navbar.navbar-fixed-top
+            div.navbar-inner
+                div.container
+                  a(data-toggle='collapse',data-target='.nav-collapse').btn.btn-navbar 
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                    //a.navbar-brand(href='/')
+                     img.navbar-logo(src='/images/ecomm.jpg', alt='Logo')
+                    a(href='/').brand
+                     img(src='/images/ecomm.jpg')
+                    //a(href='/').brand #{title}
+                    div.nav-collapse
+                        ul.nav
+                          if page == 'index'
+                            li.active
+                              a(href='/') Home
+                          else 
+                            li
+                              a(href='/') Home
+                          if page == 'productlist'
+                            li.active
+                              a(href='/productlist') Product List
+                          else
+                            li
+                              a(href='/productlist') Product List
+                        ul(style='float:right').nav.secondary-nav
+                          li
+                            a(href='#') Help
+                            a(href='#') Contact Us
+    block content

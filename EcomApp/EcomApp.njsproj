@@ -5,7 +5,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>EcomApp</Name>
     <RootNamespace>EcomApp</RootNamespace>
-    <NameOfLastUsedPublishProfile>anotherApp1</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>EcommApp</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -32,14 +32,30 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="public\javascripts\bootstrap.js" />
+    <Compile Include="public\javascripts\bootstrap.min.js" />
     <Compile Include="public\javascripts\global.js" />
+    <Compile Include="public\javascripts\jquery-1.8.1.min.js" />
+    <Compile Include="public\javascripts\jquery-1.8.2.js" />
+    <Compile Include="public\javascripts\jquery-ui-1.9.1.custom.js" />
+    <Compile Include="public\javascripts\jquery-ui-1.9.1.custom.min.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\products.js" />
     <Compile Include="routes\user.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
     <None Include="anotherApp1.pubxml" />
+    <None Include="EcommApp.pubxml" />
+    <None Include="anotherApp1 %282%29.pubxml" />
     <Content Include="package.json" />
+    <Content Include="public\images\background.jpg" />
+    <Content Include="public\images\background.png" />
+    <Content Include="public\images\ecomm.jpg" />
+    <Content Include="public\stylesheets\bootstrap-responsive.css" />
+    <Content Include="public\stylesheets\bootstrap-responsive.min.css" />
+    <Content Include="public\stylesheets\bootstrap.css" />
+    <Content Include="public\stylesheets\bootstrap.min.css" />
+    <Content Include="public\stylesheets\jquery-ui-1.9.1.custom.css" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="public\stylesheets\style.css" />
     <Content Include="README.md" />
