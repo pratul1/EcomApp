@@ -5,8 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// New Code
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('mongodb://dbism6930:ZOWQiWeVniHAzRTiPqvwbaU2KWfS7SEKxndJeGSoWtFoNqiVVfo0EKKjK3Wa8ovihlIjFBNRL7ZZ9zvm6n6rog==@dbism6930.documents.azure.com:10250/?ssl=true');
+
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var products = require('./routes/products');
 
 var app = express();
 
@@ -20,20 +27,26 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Make our db accessible to our router
+app.use(function (req, res, next) {
+    req.db = db;
+    next();
+});
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/products', products);
 
-// catch 404 and forward to error handler
+/// catch 404 and forwarding to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
 
-// error handlers
+/// error handlers
 
 // development error handler
 // will print stacktrace
@@ -56,6 +69,5 @@ app.use(function (err, req, res, next) {
         error: {}
     });
 });
-
 
 module.exports = app;

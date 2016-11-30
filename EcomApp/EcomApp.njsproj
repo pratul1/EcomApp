@@ -5,6 +5,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>EcomApp</Name>
     <RootNamespace>EcomApp</RootNamespace>
+    <NameOfLastUsedPublishProfile>anotherApp1</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -31,13 +32,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="public\javascripts\global.js" />
     <Compile Include="routes\index.js" />
+    <Compile Include="routes\products.js" />
+    <Compile Include="routes\user.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
+    <None Include="anotherApp1.pubxml" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\style.styl" />
+    <Content Include="public\stylesheets\style.css" />
     <Content Include="README.md" />
     <Content Include="typings.json" />
+    <Content Include="views\helloworld.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="views\error.jade" />
@@ -58,6 +65,8 @@
     <Folder Include="typings\globals\express\" />
     <Folder Include="typings\globals\jade\" />
     <Folder Include="typings\globals\mime\" />
+    <Folder Include="typings\globals\mongodb\" />
+    <Folder Include="typings\globals\monk\" />
     <Folder Include="typings\globals\morgan\" />
     <Folder Include="typings\globals\node\" />
     <Folder Include="typings\globals\serve-favicon\" />
@@ -66,6 +75,9 @@
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="views\newuser.jade" />
+    <Content Include="views\productlist.jade" />
+    <Content Include="views\userlist.jade" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config" />
     <Content Include="bin\ChangeConfig.ps1" />
@@ -81,6 +93,8 @@
     <TypeScriptCompile Include="typings\globals\express\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jade\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\mime\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\mongodb\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\monk\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\morgan\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\serve-favicon\index.d.ts" />
