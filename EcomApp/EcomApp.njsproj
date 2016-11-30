@@ -85,6 +85,7 @@
     <Folder Include="typings\globals\monk\" />
     <Folder Include="typings\globals\morgan\" />
     <Folder Include="typings\globals\node\" />
+    <Folder Include="typings\globals\redis\" />
     <Folder Include="typings\globals\serve-favicon\" />
     <Folder Include="typings\globals\serve-static\" />
     <Folder Include="typings\globals\stylus\" />
@@ -113,6 +114,7 @@
     <TypeScriptCompile Include="typings\globals\monk\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\morgan\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\redis\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\serve-favicon\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\serve-static\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\stylus\index.d.ts" />
