@@ -10,9 +10,7 @@ var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('mongodb://dbism6930:ZOWQiWeVniHAzRTiPqvwbaU2KWfS7SEKxndJeGSoWtFoNqiVVfo0EKKjK3Wa8ovihlIjFBNRL7ZZ9zvm6n6rog==@dbism6930.documents.azure.com:10250/?ssl=true');
 
-
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var products = require('./routes/products');
 
 var app = express();
@@ -36,7 +34,6 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', routes);
-app.use('/users', users);
 app.use('/products', products);
 
 /// catch 404 and forwarding to error handler

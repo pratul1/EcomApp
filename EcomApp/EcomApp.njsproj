@@ -40,9 +40,8 @@
     <Compile Include="public\javascripts\jquery-ui-1.9.1.custom.js" />
     <Compile Include="public\javascripts\jquery-ui-1.9.1.custom.min.js" />
     <Compile Include="routes\index.js" />
+    <Compile Include="routes\productlist.js" />
     <Compile Include="routes\products.js" />
-    <Compile Include="routes\user.js" />
-    <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
     <None Include="anotherApp1.pubxml" />
     <None Include="EcommApp.pubxml" />
@@ -51,6 +50,7 @@
     <Content Include="public\images\background.jpg" />
     <Content Include="public\images\background.png" />
     <Content Include="public\images\ecomm.jpg" />
+    <Content Include="public\images\ecomm_t.png" />
     <Content Include="public\stylesheets\bootstrap-responsive.css" />
     <Content Include="public\stylesheets\bootstrap-responsive.min.css" />
     <Content Include="public\stylesheets\bootstrap.css" />
@@ -60,7 +60,6 @@
     <Content Include="public\stylesheets\style.css" />
     <Content Include="README.md" />
     <Content Include="typings.json" />
-    <Content Include="views\helloworld.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="views\error.jade" />
@@ -92,9 +91,7 @@
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="views\newuser.jade" />
     <Content Include="views\productlist.jade" />
-    <Content Include="views\userlist.jade" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config" />
     <Content Include="bin\ChangeConfig.ps1" />

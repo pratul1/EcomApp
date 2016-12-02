@@ -1,72 +1,42 @@
 ﻿var express = require('express');
 var router = express.Router();
+var redis = require("redis");
 
-/* GET home page. */
+// Add your cache name and access key.
+var client = redis.createClient(6380, 'cacheISM6930.redis.cache.windows.net', { auth_pass: 'EH6e/d9G7VA5vmStzXmsh0Sq0ypDF3OBRBKukGVVhz0=', tls: { servername: 'cacheISM6930.redis.cache.windows.net' } });
+
 router.get('/', function (req, res) {
-    res.render('index', { title: 'Ecomm' });
-});
-
-///* GET Hello World page. */
-//router.get('/helloworld', function (req, res) {
-//    res.render('helloworld', { title: 'Hello, World!' })
-//});
-
-///* GET Userlist page. */
-//router.get('/userlist', function (req, res) {
-//    var db = req.db;
-//    var collection = db.get('usercollection');
-//    collection.find({}, {}, function (e, docs) {
-//        res.render('userlist', {
-//            "userlist": docs
-//        });
-//    });
-//});
-
-/* GET Userlist page. */
-router.get('/productlist', function (req, res) {
-    var db = req.db;
-    var collection = db.get('Products');
-    collection.find({}, {}, function (e, docs) {
-        res.render('productlist', {
-            "productlist": docs
+    client.get('topproducts', function (err, string) {
+        var obj = JSON.parse(string);
+        console.log(obj);
+        res.render('index.jade', {
+            title: 'Ecomm',
+            topproductlist: obj 
         });
     });
 });
 
-///* GET New User page. */
-//router.get('/newuser', function (req, res) {
-//    res.render('newuser', { title: 'Add New User' });
-//});
-//
-///* POST to Add User Service */
-//router.post('/adduser', function (req, res) {
-//
-//    // Set our internal DB variable
-//    var db = req.db;
-//
-//    // Get our form values. These rely on the "name" attributes
-//    var userName = req.body.username;
-//    var userEmail = req.body.useremail;
-//
-//    // Set our collection
-//    var collection = db.get('usercollection');
-//
-//    // Submit to the DB
-//    collection.insert({
-//        "username": userName,
-//        "email": userEmail
-//    }, function (err, doc) {
-//        if (err) {
-//            // If it failed, return error
-//            res.send("There was a problem adding the information to the database.");
-//        }
-//        else {
-//            // If it worked, set the header so the address bar doesn't still say /adduser
-//            //res.location("userlist");
-//            // And forward to success page
-//            res.redirect("userlist");
-//        }
-//    });
-//});
+/* GET productlist page. */
+router.get('/productlist', function (req, res) {
+    var db = req.db;
+    var collection = db.get('Products');
+    var searchCrit = req.query['search'];
+    if (req.query['search'] === null || req.query['search'] === undefined) {
+        collection.find({}, {}, function (e, docs) {
+            res.render('productlist', {
+                "productlist": docs
+            });
+        });
+    }
+    else {
+        collection.find({ TITLE: { '$regex': searchCrit, '$options': 'i' } } , {}, function (e, docs) {
+            res.render('productlist', {
+                "productlist": docs
+            });
+        });
+    }
+
+
+});
 
 module.exports = router;
