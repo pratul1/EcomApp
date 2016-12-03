@@ -51,6 +51,7 @@
     <Content Include="public\images\background.jpg" />
     <Content Include="public\images\background.png" />
     <Content Include="public\images\ecomm.jpg" />
+    <Content Include="public\images\logo.jpg" />
     <Content Include="public\stylesheets\bootstrap-responsive.css" />
     <Content Include="public\stylesheets\bootstrap-responsive.min.css" />
     <Content Include="public\stylesheets\bootstrap.css" />
