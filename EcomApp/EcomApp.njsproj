@@ -6,6 +6,8 @@
     <Name>EcomApp</Name>
     <RootNamespace>EcomApp</RootNamespace>
     <NameOfLastUsedPublishProfile>EcommApp</NameOfLastUsedPublishProfile>
+    <LaunchUrl>
+    </LaunchUrl>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -34,7 +36,6 @@
     <Compile Include="app.js" />
     <Compile Include="public\javascripts\bootstrap.js" />
     <Compile Include="public\javascripts\bootstrap.min.js" />
-    <Compile Include="public\javascripts\global.js" />
     <Compile Include="public\javascripts\jquery-1.8.1.min.js" />
     <Compile Include="public\javascripts\jquery-1.8.2.js" />
     <Compile Include="public\javascripts\jquery-ui-1.9.1.custom.js" />
@@ -50,7 +51,6 @@
     <Content Include="public\images\background.jpg" />
     <Content Include="public\images\background.png" />
     <Content Include="public\images\ecomm.jpg" />
-    <Content Include="public\images\ecomm_t.png" />
     <Content Include="public\stylesheets\bootstrap-responsive.css" />
     <Content Include="public\stylesheets\bootstrap-responsive.min.css" />
     <Content Include="public\stylesheets\bootstrap.css" />
@@ -85,6 +85,7 @@
     <Folder Include="typings\globals\morgan\" />
     <Folder Include="typings\globals\node\" />
     <Folder Include="typings\globals\redis\" />
+    <Folder Include="typings\globals\request\" />
     <Folder Include="typings\globals\serve-favicon\" />
     <Folder Include="typings\globals\serve-static\" />
     <Folder Include="typings\globals\stylus\" />
@@ -112,6 +113,7 @@
     <TypeScriptCompile Include="typings\globals\morgan\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\redis\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\request\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\serve-favicon\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\serve-static\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\stylus\index.d.ts" />

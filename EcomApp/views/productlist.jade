@@ -3,8 +3,9 @@
 extends layout
 
 block content
+
     form#searchbox.col-sm-offset-4.col-sm-4(method='get', action='/productlist')
-     input.form-control(name='search', placeholder='Type Product Name', required='false')
+     input.form-control(name='search', placeholder='Search Product Here', required='false')
      input.submitButton(type='submit', value='Search')
     div(class="products")
         - each products in productlist
