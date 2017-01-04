@@ -1,5 +1,5 @@
-# EcomApp
-Big Data Project - Designing Standalone E-commerce Website over Cloud (Azure Web Services) using Scalable Distributed Architecture
+# EcomApp - Big Data Project
+Designing Standalone E-commerce Website over Cloud (Azure Web Services) using Scalable Distributed Architecture
 
 Description: 
 Designed, configured, implemented and deployed a complete bare bone E-commerce solution over a distributed big data environment. All resources used were incorporated using Azure Web Services and other open source tools. The final site would allow customers to access, search and view product related data stored on a scalable architecture with future possibilities for shopping cart implementation and customer login.
